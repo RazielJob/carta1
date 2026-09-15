@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+
+  <!-- pantalla de inicio: necesaria para que el navegador permita reproducir audio -->
+  <div class="start-overlay" id="startOverlay">
+    <p class="start-text">toca para comenzar</p>
+  </div>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="music-bar">
+    <button id="playBtn" aria-label="Reproducir música" title="Reproducir / pausar">
+      <svg id="playIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <span class="music-name" id="songName">nuestra canción</span>
+    <input type="file" id="songInput" accept="audio/*">
+  </div>
+  <audio id="audio" loop preload="auto"></audio>
+
+  <section class="hero">
+    <div class="whale-stage" id="whaleStage"></div>
+    <p class="hero-title">Para ti</p>
+    <p class="hero-hint" id="heroHint">toca a las ballenas</p>
+  </section>
+
+  <main class="letter">
+    <p class="lede">Hola, mi amor.</p>
+
+    <p>
+      Sé que arruiné algo que era importante, y no encuentro forma de decirlo
+      que no suene pequeña frente a lo que en verdad siento. Solo quería que
+      supieras esto, con calma, sin presión, sin pedir nada a cambio de leerlo.
+    </p>
+
+    <p>
+      Sé que me tuviste miedo. Miedo a que volviera a dejarte sola en la
+      oscuridad, miedo a que pensaras que me avergonzabas de ti. Eso nunca
+      fue cierto. Nunca. Solo fui un tonto que no supo demostrarte lo
+      contrario, pero jamás busqué hacerte daño.
+    </p>
+
+    <p>
+      Cada noche desde entonces pensé en todo el daño que causé. En vez de
+      quedarme ahí hundido, usé ese dolor para intentar ser mejor — no para
+      presionarte a volver, sino porque tú eres todo lo que quiero, y no
+      puedo hacerte lo mismo otra vez por mis propios miedos e inseguridades.
+    </p>
+
+    <p>
+      Hoy soy más fuerte, más valiente, mejor de lo que era. Pero sigo
+      teniendo el mismo corazón que te ama tanto.
+    </p>
+
+    <p>
+      Nunca fue que no me importaras. Todo lo contrario: me importas tanto que
+      a veces no supe manejarlo bien, y eso te lastimó. Lo lamento de verdad,
+      y me hago responsable de lo que hice mal.
+    </p>
+
+    <p>
+      Como esas dos ballenas que viste nadar arriba, separadas por un océano
+      entero, pero que siempre encuentran el camino de regreso la una a la
+      otra: así te siento a ti. No importa la distancia que haya entre
+      nosotros ahora, una parte de mí siempre va a estar nadando hacia ti.
+    </p>
+
+    <p>
+      Te amo. No como una forma de presionarte a volver, sino porque es
+      simplemente cierto, y necesitaba decírtelo sin filtros por una vez.
+    </p>
+
+    <p>
+      Si decides que esto ya no es para ti, lo voy a entender y lo voy a
+      respetar, aunque me duela. No voy a insistir donde no se quiera. Pero
+      si alguna vez me necesitas, para lo que sea, ahí voy a estar. Eso no
+      tiene condición ni fecha de caducidad.
+    </p>
+
+    <p>
+      Y si todavía queda un lugar pequeño para mí, solo pido la oportunidad
+      de seguir luchando por este amor, con paciencia, sin prisa, a tu ritmo.
+    </p>
+
+    <p class="verse">
+      Perdóname por las noches que te dejé a oscuras,<br>
+      por no ser la luz que tu miedo necesitaba.<br>
+      Nunca fue vergüenza, nunca fue descuido:<br>
+      fue no saber amarte del modo que merecías.<br>
+      Hoy camino distinto, con el miedo enfrentado,<br>
+      y si me dejas, quiero seguir caminando a tu lado.
+    </p>
+
+    <p class="signature">Raziel</p>
+  </main>
+
+  <footer>hecho con lo que me queda de valiente</footer>
+
+  <!-- sorpresa al tocar las ballenas -->
+  <div class="note-backdrop" id="noteBackdrop"></div>
+  <div class="note-panel" id="notePanel" aria-hidden="true">
+    <button class="note-close" id="noteClose" aria-label="Cerrar">×</button>
+    <p class="note-label">una cosa más</p>
+    <p class="note-text">
+      P.D. — Esto es lo que no supe decir antes: prometo tener paciencia,
+      prometo escuchar mejor, y pase lo que pase, prometo no dejar de
+      intentar ser alguien de quien te puedas sentir orgullosa. Gracias por
+      llegar hasta aquí.
+    </p>
+  </div>
+  <div class="bubble-layer" id="bubbleLayer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
